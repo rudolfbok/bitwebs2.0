@@ -7,6 +7,10 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "BitWebs",
   description: "BitWebs company website",
+  icons: {
+    icon: '@/public/logo.png',
+    shortcut: '@/public/logo.png'
+  }
 };
 
 export default function RootLayout({
