@@ -1,6 +1,14 @@
-<svg width="50" height="30" viewBox="0 0 100 200" xmlns="http://www.w3.org/2000/svg">
-  <!-- First Circle -->
-  <circle cx="-2%" cy="100" r="80" fill="none" stroke="#54A4DC" stroke-width="18"/>
-  <!-- Second Circle -->
-  <circle cx="70" cy="100" r="80" fill="none" stroke="#54A4DC" stroke-width="18"/>
+<svg width="303" height="202" viewBox="0 0 303 202" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="101" cy="101" r="96" stroke="url(#paint0_linear_1_4)" stroke-width="10" />
+  <circle cx="202" cy="101" r="96" stroke="url(#paint1_linear_1_4)" stroke-width="10" />
+  <defs>
+    <linearGradient id="paint0_linear_1_4" x1="101" y1="0" x2="101" y2="202" gradientUnits="userSpaceOnUse">
+      <stop />
+      <stop offset="1" stop-color="#666666" />
+    </linearGradient>
+    <linearGradient id="paint1_linear_1_4" x1="202" y1="0" x2="202" y2="202" gradientUnits="userSpaceOnUse">
+      <stop />
+      <stop offset="1" stop-color="#666666" />
+    </linearGradient>
+  </defs>
 </svg>
