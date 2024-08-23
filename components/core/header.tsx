@@ -1,4 +1,5 @@
 import SlideMenu from "./slidemenu"
+import DesktopMenu from "./desktopmenu"
 import Image from "next/image"
 import LogoTest from "@/public/logo.svg"
 
@@ -9,8 +10,8 @@ export default function Header() {
                 <Image src={LogoTest} alt="Logo" className="max-h-7 w-auto"/>
                 <p>BitWebs</p>
             </div>
-            <div className="flex w-1/2 justify-end">
-                <SlideMenu/>
+            <div className="flex w-1/2 max-md:justify-end md:justify-end">
+                <DesktopMenu/>
             </div>
         </div>
     )

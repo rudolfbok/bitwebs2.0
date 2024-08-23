@@ -12,7 +12,8 @@
     "hamburger-react": "^2.5.1",
     "next": "14.2.5",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-social-icons": "^6.18.0"
   },
   "devDependencies": {
     "typescript": "^5",
