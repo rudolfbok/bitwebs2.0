@@ -1,5 +1,4 @@
-import SlideMenu from "./slidemenu"
-import DesktopMenu from "./desktopmenu"
+import Menu from "./menu"
 import Image from "next/image"
 import LogoTest from "@/public/logo.svg"
 
@@ -11,7 +10,7 @@ export default function Header() {
                 <p>BitWebs</p>
             </div>
             <div className="flex w-1/2 max-md:justify-end md:justify-end">
-                <DesktopMenu/>
+                <Menu/>
             </div>
         </div>
     )

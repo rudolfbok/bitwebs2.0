@@ -5,21 +5,6 @@ import { SocialIcon } from "react-social-icons"
 import { Turn } from "hamburger-react";
 import { useState } from "react";
 
-export  function DesktopMenu () {
-    return (
-        <div className="flex flex-row gap-4 items-center max-md:hidden">
-            {menuItems.map((item, index) => (
-                <a key={index} href={item.href} className="mr-[20px]">
-                    {item.label}
-                </a>
-            ))}
-            <SocialIcon url="https://github.com" bgColor="black" className="!w-10 !h-10"/>
-            <SocialIcon url="https://linkedin.com" bgColor="black" className="!w-10 !h-10"/>
-            <ContactUs/>
-        </div>
-    )
-}
-
 export default function Menu () {
     const [isOpen, setIsOpen] = useState(false);
     return (
@@ -40,6 +25,21 @@ export default function Menu () {
                 <Turn toggled={isOpen} onToggle={setIsOpen} size={22}/>
             
             </button>
+        </div>
+    )
+}
+
+export function DesktopMenu () {
+    return (
+        <div className="flex flex-row gap-4 items-center max-md:hidden">
+            {menuItems.map((item, index) => (
+                <a key={index} href={item.href} className="mr-[20px]">
+                    {item.label}
+                </a>
+            ))}
+            <SocialIcon url="https://github.com" bgColor="black" className="!w-10 !h-10"/>
+            <SocialIcon url="https://linkedin.com" bgColor="black" className="!w-10 !h-10"/>
+            <ContactUs/>
         </div>
     )
 }
