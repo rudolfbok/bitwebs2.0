@@ -3,6 +3,7 @@ import ContactUs from "./contactus"
 import { SocialIcon } from "react-social-icons"
 import { Turn } from "hamburger-react";
 import { useState } from "react";
+import { useEffect } from "react";
 
 const menuItems = [
     { label: 'Home', href: '#' },
@@ -12,6 +13,8 @@ const menuItems = [
 
 export default function Menu() {
     const [isOpen, setIsOpen] = useState(false);
+
+
     return (
         <div className="flex flex-row gap-4 items-center ">
             <div className={`
@@ -21,7 +24,6 @@ export default function Menu() {
                 max-md:pt-[50px] 
                 md:flex-row 
                 items-center 
-                border 
                 fixed
                 gap-4 
                 md:static z-0 
@@ -33,11 +35,13 @@ export default function Menu() {
                 h-[100%] 
                 md:w-auto 
                 md:border-none 
-                transition-transform 
-                md:transform-none ${isOpen ? '' : 'translate-x-[130%]'} top-[-40px]
+                transition-[transform,opacity]
+                duration-1000
+                md:transform-none ${isOpen ? 'opacity-100' : 'opacity-0'} 
+                top-[-40px]
                 `}>
                 {menuItems.map((item, index) => (
-                    <a key={index} href={item.href} className="rounded-lg max-md:w-[200px] w-[80px] my-[5px] mx-[px] text-center border md:border-none">
+                    <a key={index} href={item.href} className="rounded-lg max-md:w-[150px] w-[80px] my-[5px] mx-[px] text-center border md:border-none">
                         {item.label}
                     </a>
                 ))}
@@ -47,10 +51,9 @@ export default function Menu() {
                 </div>
             </div>
 
-            <button onClick={() => setIsOpen(!isOpen)} className="relative z-10 md:hidden">
+            <div className="relative z-10 md:hidden">
                 <Turn toggled={isOpen} onToggle={setIsOpen} color="white" size={22} />
-
-            </button>
+            </div>
         </div>
     )
 }
