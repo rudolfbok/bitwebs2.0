@@ -18,7 +18,8 @@ const config: Config = {
       red: '#FF0000',
       blue: '#54A4DC',
       white: '#FFFFFF',
-      black: '#000000'
+      black: '#000000',
+      purple: '#8E44AD'
     },
   },
   plugins: [],

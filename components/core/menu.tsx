@@ -1,35 +1,61 @@
 "use client"
-import menuItems from "@/types/menuitems"
 import ContactUs from "./contactus"
 import { SocialIcon } from "react-social-icons"
 import { Turn } from "hamburger-react";
 import { useState } from "react";
 
-export default function Menu () {
+const menuItems = [
+    { label: 'Home', href: '#' },
+    { label: 'Second', href: '#' },
+    { label: 'Third', href: '#' }
+]
+
+export default function Menu() {
     const [isOpen, setIsOpen] = useState(false);
     return (
         <div className="flex flex-row gap-4 items-center ">
-    
-            <div className={`flex flex-col md:flex-row items-center border fixed md:static z-0 bg-white right-0 -translate-y-[-95px] w-[110px] md:w-auto md:border-none transition-transform md:transform-none ${isOpen ? '' :'translate-x-[130%]'}`}>
-            {menuItems.map((item, index) => (
-                        <a key={index} href={item.href} className="rounded-lg w-[100px] my-[5px] mx-[px] text-center border md:border-none">
-                            {item.label}
-                        </a>
-                    ))}
+            <div className={`
+                flex
+                flex-col 
+                justify-start 
+                max-md:pt-[50px] 
+                md:flex-row 
+                items-center 
+                border 
+                fixed
+                gap-4 
+                md:static z-0 
+                text-white 
+                max-md:bg-purple 
+                right-0 
+                -translate-y-[-95px] 
+                w-[100vw] 
+                h-[100%] 
+                md:w-auto 
+                md:border-none 
+                transition-transform 
+                md:transform-none ${isOpen ? '' : 'translate-x-[130%]'} top-[-40px]
+                `}>
+                {menuItems.map((item, index) => (
+                    <a key={index} href={item.href} className="rounded-lg max-md:w-[200px] w-[80px] my-[5px] mx-[px] text-center border md:border-none">
+                        {item.label}
+                    </a>
+                ))}
+                <div className="flex flex-row gap-4">
+                    <SocialIcon url="https://github.com" bgColor="#8E44AD" className="!w-10 !h-10 border-2 rounded-full" />
+                    <SocialIcon url="https://linkedin.com" bgColor="#8E44AD" className="!w-10 !h-10 border-2 rounded-full" />
+                </div>
             </div>
-        
-            <SocialIcon url="https://github.com" bgColor="black" className="!w-10 !h-10"/>
-            <SocialIcon url="https://linkedin.com" bgColor="black" className="!w-10 !h-10"/>
-            <ContactUs/>
+
             <button onClick={() => setIsOpen(!isOpen)} className="relative z-10 md:hidden">
-                <Turn toggled={isOpen} onToggle={setIsOpen} size={22}/>
-            
+                <Turn toggled={isOpen} onToggle={setIsOpen} color="white" size={22} />
+
             </button>
         </div>
     )
 }
 
-export function DesktopMenu () {
+export function DesktopMenu() {
     return (
         <div className="flex flex-row gap-4 items-center max-md:hidden">
             {menuItems.map((item, index) => (
@@ -37,9 +63,9 @@ export function DesktopMenu () {
                     {item.label}
                 </a>
             ))}
-            <SocialIcon url="https://github.com" bgColor="black" className="!w-10 !h-10"/>
-            <SocialIcon url="https://linkedin.com" bgColor="black" className="!w-10 !h-10"/>
-            <ContactUs/>
+            <SocialIcon url="https://github.com" bgColor="black" className="!w-10 !h-10" />
+            <SocialIcon url="https://linkedin.com" bgColor="black" className="!w-10 !h-10" />
+            <ContactUs />
         </div>
     )
 }
